@@ -108,10 +108,9 @@ const Home = ({ client }) => {
         return (
           <div className="Home">
             <div className="Intro">
-              <h1>YangDAO</h1>
+              <h1>OrochiDAO</h1>
               <p>
-                Securing the Collective Bag <br />
-                In the spirit of the One and Only
+                Party like AD 720 <br />
               </p>
             </div>
             <div className="Chart" style={{ width: '100%', height: '33vh' }}>

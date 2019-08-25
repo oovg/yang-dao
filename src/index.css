@@ -9,11 +9,11 @@ body {
 
 body::before {
   content: "";
-  background-image: url('assets/yang-sun.png');
+  background-image: url('assets/background.jpg');
   background-blend-mode: color;
   background-repeat: no-repeat;
-  background-size: 50vh;
-  background-position: center 60%;
+  background-size: 100%;
+  background-position: center 0%;
   opacity: .25;
   top: 0;
   left: 0;

@@ -215,6 +215,20 @@ const ProposalForm = ({ history }) => {
                   </div>
                 )}
                 </Field>
+                <Field name="interestRecipientMapRequested">
+                {({ field, form }) => (
+                  <div
+                    className={
+                      field.value
+                        ? 'Field HasValue'
+                        : 'Field '
+                    }
+                  >
+                  <label>RDai Hat ID</label>
+                  <input type="number" {...field} />
+                  </div>
+                )}
+                </Field>
                 <ErrorMessage name="sharesRequested">
                   {(msg) => <div className="Error">{msg}</div>}
                 </ErrorMessage>
