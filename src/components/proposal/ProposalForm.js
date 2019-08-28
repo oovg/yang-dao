@@ -37,6 +37,7 @@ const ProposalForm = ({ history }) => {
               applicant: '',
               tokenTribute: 0,
               sharesRequested: 0,
+              interestRecipientMapRequested:0
             }}
             validate={(values) => {
               let errors = {};
