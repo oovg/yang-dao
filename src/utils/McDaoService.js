@@ -216,7 +216,15 @@ export default class McDaoService {
     if (!this.contract) {
       await this.initContract();
     }
-
+    console.log({
+      from,
+      applicant,
+      tokenTribute,
+      sharesRequested,
+      details,
+      interestRecipientMapRequested,
+      encodedPayload  
+    })
     if (encodedPayload) {
       const data = this.contract.methods
         .submitProposal(applicant, tokenTribute, sharesRequested, interestRecipientMapRequested,details)
