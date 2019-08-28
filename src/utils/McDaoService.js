@@ -219,7 +219,7 @@ export default class McDaoService {
 
     if (encodedPayload) {
       const data = this.contract.methods
-        .submitProposal(applicant, tokenTribute, sharesRequested, details)
+        .submitProposal(applicant, tokenTribute, sharesRequested, interestRecipientMapRequested,details)
         .encodeABI();
       return data;
     }
