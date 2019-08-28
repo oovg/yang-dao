@@ -67,7 +67,8 @@ const ProposalForm = ({ history }) => {
                   web3Service.toWei(values.tokenTribute),
                   values.sharesRequested + '',
                   `id~${uuid}~title~${values.title}`,
-                  true,
+                  values.interestRecipientMapRequested,
+                  true
                 );
                 const estimated = await sdk.estimateAccountTransaction(
                   dao.contractAddr,

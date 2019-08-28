@@ -210,7 +210,8 @@ export default class McDaoService {
     tokenTribute,
     sharesRequested,
     details,
-    encodedPayload = false,
+    interestRecipientMapRequested,
+    encodedPayload = false
   ) {
     if (!this.contract) {
       await this.initContract();
@@ -224,7 +225,7 @@ export default class McDaoService {
     }
 
     let proposal = this.contract.methods
-      .submitProposal(applicant, tokenTribute, sharesRequested, details)
+      .submitProposal(applicant, tokenTribute, sharesRequested, interestRecipientMapRequested,details)
       .send({ from })
       .once('transactionHash', (txHash) => {})
       .then((resp) => {
