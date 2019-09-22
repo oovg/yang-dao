@@ -210,21 +210,30 @@ export default class McDaoService {
     tokenTribute,
     sharesRequested,
     details,
-    encodedPayload = false,
+    interestRecipientMapRequested,
+    encodedPayload = false
   ) {
     if (!this.contract) {
       await this.initContract();
     }
-
+    console.log({
+      from,
+      applicant,
+      tokenTribute,
+      sharesRequested,
+      details,
+      interestRecipientMapRequested,
+      encodedPayload  
+    })
     if (encodedPayload) {
       const data = this.contract.methods
-        .submitProposal(applicant, tokenTribute, sharesRequested, details)
+        .submitProposal(applicant, tokenTribute, sharesRequested, interestRecipientMapRequested,details)
         .encodeABI();
       return data;
     }
 
     let proposal = this.contract.methods
-      .submitProposal(applicant, tokenTribute, sharesRequested, details)
+      .submitProposal(applicant, tokenTribute, sharesRequested, interestRecipientMapRequested,details)
       .send({ from })
       .once('transactionHash', (txHash) => {})
       .then((resp) => {

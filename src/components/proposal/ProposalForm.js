@@ -37,6 +37,7 @@ const ProposalForm = ({ history }) => {
               applicant: '',
               tokenTribute: 0,
               sharesRequested: 0,
+              interestRecipientMapRequested:0
             }}
             validate={(values) => {
               let errors = {};
@@ -66,7 +67,8 @@ const ProposalForm = ({ history }) => {
                   web3Service.toWei(values.tokenTribute),
                   values.sharesRequested + '',
                   `id~${uuid}~title~${values.title}`,
-                  true,
+                  values.interestRecipientMapRequested,
+                  true
                 );
                 const estimated = await sdk.estimateAccountTransaction(
                   dao.contractAddr,
@@ -211,6 +213,20 @@ const ProposalForm = ({ history }) => {
                     }
                   >
                   <label>Shares Requested</label>
+                  <input type="number" {...field} />
+                  </div>
+                )}
+                </Field>
+                <Field name="interestRecipientMapRequested">
+                {({ field, form }) => (
+                  <div
+                    className={
+                      field.value
+                        ? 'Field HasValue'
+                        : 'Field '
+                    }
+                  >
+                  <label>RDai Hat ID</label>
                   <input type="number" {...field} />
                   </div>
                 )}

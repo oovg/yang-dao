@@ -1,4 +1,4 @@
-service: yang-dao-app-v1
+service: orochidao
 
 plugins:
   - serverless-single-page-app-plugin
@@ -12,7 +12,7 @@ provider:
   runtime: nodejs8.10
   stage: dev
   region: us-east-1
-  profile: yang-gang
+  profile: default
 
 resources:
   - ${file(resources/s3-bucket.yml)}

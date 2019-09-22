@@ -31,6 +31,7 @@ const ProposalDetail = ({
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log('fetchData', proposal)
       const uuid = proposal.details.split('~')[1];
 
       if (uuid) {
